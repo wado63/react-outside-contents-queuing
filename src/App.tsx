@@ -1,24 +1,18 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { ContentsQueueProvider } from "./contexts/OutsideContentsQueueContext";
+import { ToastRegister } from "./components/ToastRegister";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContentsQueueProvider>
+      <div className="App">
+        <div className="App-container">
+          <img src={logo} className="App-logo" alt="logo" />
+          <ToastRegister />
+        </div>
+      </div>
+    </ContentsQueueProvider>
   );
 }
 
